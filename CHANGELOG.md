@@ -14,6 +14,9 @@
 
 ### Fixed
 
+- Reuse one observability session per HTTP trace lifecycle while preserving independent span and trace completion ([#5073](https://github.com/IBM/mcp-context-forge/pull/5073)).
+- Recover trace completion after span persistence failures and redact credentials from HTTP trace URLs and exception stack traces.
+
 - **A2A and gateway credential masking** ([#6704](https://github.com/IBM/mcp-context-forge/issues/6704)) - `A2AAgentRead` and `GatewayRead` mask stored credentials on every `a2a.read` and `gateways.read` path. Regression tests cover basic, bearer, and authheaders auth types.
 
 - **A2A agent credential rotation** - `PUT /a2a/{agent_id}` now persists a new basic, bearer, or custom-header credential. The update path ignored these values before.
